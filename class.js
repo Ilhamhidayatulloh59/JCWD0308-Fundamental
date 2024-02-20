@@ -33,23 +33,26 @@ class Transaction {
 
     addToCart(item, qty) { // { name: "melon", price: 30000, qty: 2}
         item.qty = qty
+        item['total'] = item.price * qty
         this.cart.push(item)
     }
 
+    getCart() {
+        this.cart.forEach((value) => {
+            this.#total += value.price * value.qty
+        })
+        this.cart.push({ total: this.#total })
+        console.table(this.cart)
+        console.log(this.#total)
+    }
 }
+
+
 
 const transaction = new Transaction()
 transaction.addToCart(product3, 2)
 transaction.addToCart(product2, 3)
+transaction.addToCart(product1, 5)
+transaction.getCart()
 
-console.log(transaction)
-
-
-const std = {
-    name: "John",
-    age: 20
-}
-
-std.hobby = "coding"
-
-console.log(std);
+// console.log(transaction)
