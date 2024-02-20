@@ -1,32 +1,35 @@
-let arr1 = [1, 2, 3];
-let arr2 = [1, 2, 3];
+let kata = "AYAM"
+let res = 0
 
-let obj1 = {
-  name: "andi",
-};
-let obj2 = {
-  name: "andi",
-};
-
-// console.log(arr1 === arr2)
-// console.log(arr1.length === arr2.length)
-// console.log(arr1[0] === arr2[0])
-
-// console.log(obj1 === obj2)
-// console.log(typeof arr1)
-
-let word = "Bandung";
-
-console.log(word[0]);
-
-function searchStr(word, search) {
-  let res = [word.search(search[0])];
-  for (let i = 0; i < search.length - 1; i++) {
-    res.push(res[i] + 1);
-  }
-  return res;
+for (let i = 0; i < kata.length; i++) {
+    res += (kata.charCodeAt(i) - 64)
 }
 
-console.log(searchStr("Indonesia", "one"));
+console.log(res)
 
+console.log("C".charCodeAt(0) - 64)
+
+
+let dest = [
+    { country: "Thailand", budget: 12000000},
+    { country: "Kamboja", budget: 11000000},
+    { country: "Singapura", budget: 9000000},
+    { country: "Malaysia", budget: 6000000}
+]
+
+console.log(dest[2].country)
+console.log(dest[2][`budget`] + dest[3].budget + dest[2].country)
+
+// let money = 7000000
+// let selisih = money
+// let destinasi = ""
+
+// for (let i = 0; i < dest.length; i++) {
+//     if (dest[i].budget <= money && money - dest[i].budget <= selisih) {
+//         destinasi = dest[i].country
+//         selisih = money - dest[i].budget
+//     }
+// }
+
+// console.log(destinasi)
 
